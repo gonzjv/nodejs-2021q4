@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-2021q4",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^8.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonzjv/nodejs-2021q4.git"
+  },
+  "author": "trshkv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gonzjv/nodejs-2021q4/issues"
+  },
+  "homepage": "https://github.com/gonzjv/nodejs-2021q4#readme"
+}
