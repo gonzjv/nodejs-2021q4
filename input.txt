@@ -1,1 +1,2 @@
-Hello from salty mountains!
+1. Hello from salty mountains, fellas!
+2. This is secret. Message about "_" symbol!
