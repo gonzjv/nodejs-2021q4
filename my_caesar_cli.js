@@ -21,7 +21,11 @@ if (options.action === 'encode') {
   const caesarEncode = (text, shift) => {
     const charCodeArr = text.split('').map(
       (char) =>
-        char.match(/[A-Za-z]/) ? char.charCodeAt(0) + shift : char.charCodeAt(0),
+        char.match(/[A-Z]/)
+          ? ((char.charCodeAt(0) - 65 + shift) % 26) + 65
+          : char.match(/[a-z]/)
+          ? ((char.charCodeAt(0) - 97 + shift) % 26) + 97
+          : char.charCodeAt(0),
       // true ? char.charCodeAt(0) + 1 : char.charCodeAt(0),
     );
     const res = String.fromCharCode(...charCodeArr);
