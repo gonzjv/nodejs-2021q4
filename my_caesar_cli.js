@@ -29,26 +29,48 @@ if (options.action === 'encode') {
           : char.charCodeAt(0),
       );
     const res = String.fromCharCode(...charCodeArr);
-    console.log('charCodeArr: ', charCodeArr);
-    console.log('before: ', text);
-    console.log('result: ', res);
+    // console.log('charCodeArr: ', charCodeArr);
+    // console.log('before: ', text);
+    // console.log('result: ', res);
     return res;
   };
+
+  const getReadStream = () => {
+    if (options.input) {
+      return fs.createReadStream(options.input);
+    } else {
+      console.log('Text for encode: ');
+      return process.stdin;
+    }
+  };
+
   const transformStream = new Transform({
     transform(chunk, encoding, callback) {
       this.push(caesarEncode(chunk.toString(), Number(options.shift)));
       callback();
     },
   });
+
+  const getWriteStream = () => {
+    if (options.output) {
+      return fs.createWriteStream(options.output);
+    } else {
+      // console.log('Result: ');
+      return process.stdout;
+    }
+  };
+
   pipeline(
-    fs.createReadStream(options.input),
+    // fs.createReadStream(options.input),
+    getReadStream(),
     transformStream,
-    fs.createWriteStream(options.output),
+    // fs.createWriteStream(options.output),
+    getWriteStream(),
     (error) => {
       error ? console.log(console.error()) : console.log('finished');
     },
   );
-  console.log('my_caesar_cli: ENCODE done, my master!');
+  // console.log('my_caesar_cli: ENCODE done, my master!');
 }
 
 if (options.action === 'decode') {
@@ -86,4 +108,4 @@ if (options.action === 'decode') {
   );
 }
 
-console.log('my_caesar_cli in da house!');
+// console.log('my_caesar_cli in da house!');
