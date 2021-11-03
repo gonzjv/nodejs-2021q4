@@ -1,15 +1,28 @@
 const caesarEncrypt = (text, mode) => {
   const shift = 1;
+  const ALPHABET_LENGTH = 26;
+  const LOWERCASE_START = 97;
+  const UPPERCASE_START = 65;
 
-  const charCodeArr = text
-    .split('')
-    .map((char) =>
-      char.match(/[A-Z]/)
-        ? ((char.charCodeAt(0) - 65 + shift) % 26) + 65
-        : char.match(/[a-z]/)
-        ? ((char.charCodeAt(0) - 97 + shift) % 26) + 97
-        : char.charCodeAt(0),
-    );
+  const charCodeArr = text.split('').map(
+    (char) => {
+      if (char.match(/[A-Z]/)) {
+        return (
+          ((char.charCodeAt(0) - UPPERCASE_START + shift) %
+            ALPHABET_LENGTH) +
+          UPPERCASE_START
+        );
+      }
+      if (char.match(/[a-z]/)) {
+        return (
+          ((char.charCodeAt(0) - LOWERCASE_START + shift) %
+            ALPHABET_LENGTH) +
+          LOWERCASE_START
+        );
+      }
+    },
+    // : char.charCodeAt(0),
+  );
   const res = String.fromCharCode(...charCodeArr);
   // console.log('charCodeArr: ', charCodeArr);
   console.log('before: ', text);
