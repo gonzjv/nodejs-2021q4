@@ -1,4 +1,5 @@
-const { caesarEncrypt } = require('./caesar-encrypt');
+const { atbashEncrypt } = require('./ciphers/atbash-encrypt');
+const { caesarEncrypt } = require('./ciphers/caesar-encrypt');
 const { getOptionValue } = require('./get-options');
 const { handleErorr } = require('./handle-error');
 
@@ -7,7 +8,7 @@ const { handleErorr } = require('./handle-error');
 // console.log('isCaesar: ', isCaesarNeeded);
 
 const encrypt = (text) => {
-  let result = '';
+  let result = text;
   const configValue = getOptionValue('-c');
   const configCharsArr = configValue && configValue.split('');
 
@@ -17,7 +18,9 @@ const encrypt = (text) => {
       const modeValue = arr[index + 1];
       const mode = modeValue == '1' ? 'encode' : 'decode';
       console.log('mode: ', mode);
-      result = caesarEncrypt(text, mode);
+      result = caesarEncrypt(result, mode);
+    } else if (char.match(/A/)) {
+      result = atbashEncrypt(result);
     }
   });
 

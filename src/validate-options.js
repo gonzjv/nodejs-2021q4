@@ -23,7 +23,7 @@ const validateOptions = () => {
 
   configCharsArr.forEach((char, index, arr) => {
     // console.log('arr: ', arr);
-    if (char.match(/[ACR]/)) {
+    if (char.match(/[CR]/)) {
       const modesAllowed = [0, 1];
       const modeValue = arr[index + 1];
       const isModeValid = modesAllowed.some(
