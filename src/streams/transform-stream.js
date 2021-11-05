@@ -1,5 +1,5 @@
-const { Transform } = require('stream');
-const { encrypt } = require('../encrypt');
+import { Transform } from 'stream';
+import encrypt from '../encrypt.js';
 
 const createTransformStream = () => {
   const transformStream = new Transform({
@@ -11,6 +11,8 @@ const createTransformStream = () => {
   return transformStream;
 };
 
-module.exports = {
-  createTransformStream,
-};
+// module.exports = {
+//   createTransformStream,
+// };
+
+export default createTransformStream;

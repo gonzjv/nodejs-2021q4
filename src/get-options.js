@@ -1,4 +1,4 @@
-const { getFlags } = require('./get-flags');
+import getFlags from './get-flags.js';
 
 const flags = getFlags();
 
@@ -8,6 +8,8 @@ const getOptionValue = (flag) => {
   return value;
 };
 
-module.exports = {
-  getOptionValue,
-};
+// module.exports = {
+//   getOptionValue,
+// };
+
+export default getOptionValue;

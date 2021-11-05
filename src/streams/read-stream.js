@@ -1,5 +1,5 @@
-const { getOptionValue } = require('../get-options');
-const fs = require('fs');
+import fs from 'fs';
+import getOptionValue from '../get-options.js';
 
 const createReadStream = () => {
   const inputValue = getOptionValue('-i');
@@ -11,6 +11,8 @@ const createReadStream = () => {
   }
 };
 
-module.exports = {
-  createReadStream,
-};
+// module.exports = {
+//   createReadStream,
+// };
+
+export default createReadStream;

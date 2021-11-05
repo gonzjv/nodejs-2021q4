@@ -1,15 +1,9 @@
-const { createReadStream } = require('./read-stream');
-const {
-  createTransformStream,
-} = require('./transform-stream');
-const { createWriteStream } = require('./write-stream');
+import createReadStream from './read-stream.js';
+import createWriteStream from './write-stream.js';
+import createTransformStream from './transform-stream.js';
 
 const readStream = createReadStream();
 const writeStream = createWriteStream();
 const transformStream = createTransformStream();
 
-module.exports = {
-  readStream,
-  writeStream,
-  transformStream,
-};
+export { readStream, writeStream, transformStream };

@@ -21,6 +21,4 @@ const atbashEncrypt = (text) => {
   return result;
 };
 
-module.exports = {
-  atbashEncrypt,
-};
+export default atbashEncrypt;

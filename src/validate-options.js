@@ -1,6 +1,6 @@
-const { getFlags } = require('./get-flags');
-const { getOptionValue } = require('./get-options');
-const { handleErorr } = require('./handle-error');
+import getFlags from './get-flags.js';
+import getOptionValue from './get-options.js';
+import handleErorr from './handle-error.js';
 const { exit } = process;
 
 const validateOptions = () => {
@@ -39,6 +39,4 @@ const validateOptions = () => {
   });
 };
 
-module.exports = {
-  validateOptions,
-};
+export default validateOptions;

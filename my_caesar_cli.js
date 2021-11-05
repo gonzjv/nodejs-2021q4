@@ -1,10 +1,10 @@
-const { pipeline } = require('stream');
-const {
+import { pipeline } from 'stream';
+import {
   readStream,
-  transformStream,
   writeStream,
-} = require('./src/streams/streams');
-const { validateOptions } = require('./src/validate-options');
+  transformStream,
+} from './src/streams/streams.js';
+import validateOptions from './src/validate-options.js';
 
 validateOptions();
 

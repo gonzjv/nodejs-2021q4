@@ -5,6 +5,4 @@ const handleErorr = (message) => {
   exit(1);
 };
 
-module.exports = {
-  handleErorr,
-};
+export default handleErorr;
