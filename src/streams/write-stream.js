@@ -4,7 +4,9 @@ import getOptionValue from '../helpers/get-options.js';
 const createWriteStream = () => {
   const outputValue = getOptionValue('-o');
   if (outputValue) {
-    return fs.createWriteStream(outputValue);
+    return fs.createWriteStream(outputValue, {
+      flags: 'a',
+    });
   } else {
     return process.stdout;
   }
