@@ -1,7 +1,7 @@
 import atbashEncrypt from './ciphers/atbash-encrypt.js';
 import caesarEncrypt from './ciphers/caesar-encrypt.js';
 import rotateBy8Encrypt from './ciphers/rotate-by-8-encrypt.js';
-import getOptionValue from './get-options.js';
+import getOptionValue from './helpers/get-options.js';
 import getMode from './helpers/get-mode.js';
 
 const encrypt = (text) => {

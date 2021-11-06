@@ -4,8 +4,4 @@ const getMode = (array, index) => {
   return mode;
 };
 
-// module.exports = {
-//   getMode,
-// };
-
 export default getMode;

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import getOptionValue from '../get-options.js';
+import getOptionValue from '../helpers/get-options.js';
 
 const createReadStream = () => {
   const inputValue = getOptionValue('-i');
@@ -10,9 +10,5 @@ const createReadStream = () => {
     return process.stdin;
   }
 };
-
-// module.exports = {
-//   createReadStream,
-// };
 
 export default createReadStream;

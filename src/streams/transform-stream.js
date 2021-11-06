@@ -11,8 +11,4 @@ const createTransformStream = () => {
   return transformStream;
 };
 
-// module.exports = {
-//   createTransformStream,
-// };
-
 export default createTransformStream;

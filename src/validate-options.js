@@ -1,5 +1,5 @@
-import getFlags from './get-flags.js';
-import getOptionValue from './get-options.js';
+import getFlags from './helpers/get-flags.js';
+import getOptionValue from './helpers/get-options.js';
 import handleErorr from './handle-error.js';
 const { exit } = process;
 
@@ -9,7 +9,7 @@ const validateOptions = () => {
   const isFlagAllowed = requiredFlags.some((flag) =>
     flags.includes(flag),
   );
-  console.log('is flag allowed? ', isFlagAllowed);
+  // console.log('is flag allowed? ', isFlagAllowed);
 
   if (!isFlagAllowed) {
     console.log(
@@ -22,7 +22,6 @@ const validateOptions = () => {
   const configCharsArr = configValue && configValue.split('');
 
   configCharsArr.forEach((char, index, arr) => {
-    // console.log('arr: ', arr);
     if (char.match(/[CR]/)) {
       const modesAllowed = [0, 1];
       const modeValue = arr[index + 1];

@@ -8,8 +8,4 @@ const getOptionValue = (flag) => {
   return value;
 };
 
-// module.exports = {
-//   getOptionValue,
-// };
-
 export default getOptionValue;
