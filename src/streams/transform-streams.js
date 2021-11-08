@@ -9,13 +9,6 @@ const createTransformStreams = () => {
   const configValue = getOptionValue('-c');
   const configCharsArr = configValue && configValue.split('');
 
-  // const atbashStream = new Transform({
-  //   transform(chunk, encoding, callback) {
-  //     this.push(atbashEncrypt(chunk.toString()));
-  //     callback();
-  //   },
-  // });
-
   configCharsArr.forEach((char, index, arr) => {
     if (char.match(/C/)) {
       const mode = getMode(arr, index);
