@@ -1,9 +1,9 @@
 import createReadStream from './read-stream.js';
 import createWriteStream from './write-stream.js';
-import createTransformStream from './transform-stream.js';
+import createTransformStreams from './transform-streams.js';
 
 const readStream = createReadStream();
 const writeStream = createWriteStream();
-const transformStream = createTransformStream();
+const transformStreams = createTransformStreams();
 
-export { readStream, writeStream, transformStream };
+export { readStream, writeStream, transformStreams };

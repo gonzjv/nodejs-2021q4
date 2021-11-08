@@ -1,6 +1,7 @@
 import getFlags from './helpers/get-flags.js';
 import getOptionValue from './helpers/get-options.js';
-import handleErorr from './handle-error.js';
+import configError from './helpers/config-error.js';
+import flagsError from './helpers/flags-error.js';
 const { exit } = process;
 
 const validateOptions = () => {
@@ -9,13 +10,11 @@ const validateOptions = () => {
   const isFlagAllowed = requiredFlags.some((flag) =>
     flags.includes(flag),
   );
-  // console.log('is flag allowed? ', isFlagAllowed);
 
   if (!isFlagAllowed) {
-    console.log(
+    throw new flagsError(
       'Stop, fellow! You need to enter valid options with flag -c or --config ',
     );
-    exit(1);
   }
 
   const configValue = getOptionValue('-c');
@@ -28,13 +27,16 @@ const validateOptions = () => {
       const isModeValid = modesAllowed.some(
         (mode) => mode == modeValue,
       );
-      isModeValid
-        ? null
-        : handleErorr('Available modes are: C1, C0 or R1, R0');
+
+      if (!isModeValid) {
+        throw new configError(
+          'Available modes are: C1, C0 or R1, R0',
+        );
+      }
     }
-    //   if (char.match(/[^ACR]/)) {
-    //     handleErorr('Available ciphers are: C, A or R');
-    //   }
+    if (char.match(/[^ACR0-9-]/)) {
+      throw new configError('Available ciphers are: C, A or R');
+    }
   });
 };
 

@@ -6,7 +6,6 @@ const createReadStream = () => {
   if (inputValue) {
     return fs.createReadStream(inputValue);
   } else {
-    console.log('Text for encode: ');
     return process.stdin;
   }
 };

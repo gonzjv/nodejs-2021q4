@@ -4,7 +4,6 @@ const caesarEncrypt = (text, mode) => {
   const UPPERCASE_START = mode == 'encode' ? 65 : 90;
   const LOWERCASE_START = mode == 'encode' ? 97 : 122;
 
-  console.log('text: ', text);
   const charCodeArr = text
     .split('')
     .map((char) =>

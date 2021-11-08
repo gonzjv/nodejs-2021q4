@@ -1,8 +1,14 @@
-const { exit } = process;
+let { exit, stderr } = process;
 
-const handleErorr = (message) => {
-  console.log(message);
+const handleError = (err) => {
+  const { isUserError, name, message } = err;
+
+  if (isUserError) {
+    stderr.write(`${name}: ${message}\n`);
+  } else {
+    throw err;
+  }
   exit(1);
 };
 
-export default handleErorr;
+export default handleError;
