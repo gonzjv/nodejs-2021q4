@@ -1,8 +1,12 @@
+import checkConfigMissing from './check-config-missing.js';
 import configError from './config-error.js';
 import getOptionValue from './get-options.js';
 
 const validateConfig = () => {
   const configValue = getOptionValue('-c');
+
+  checkConfigMissing(configValue);
+
   const configCharsArr = configValue && configValue.split('');
 
   configCharsArr.forEach((char, index, arr) => {
