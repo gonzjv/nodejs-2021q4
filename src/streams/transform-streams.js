@@ -6,7 +6,8 @@ import rotateBy8Stream from './rotate-by-8-stream.js.js';
 
 const createTransformStreams = () => {
   const transformStreams = [];
-  const configValue = getOptionValue('-c');
+  const configValue =
+    getOptionValue('-c') || getOptionValue('--config');
   const configCharsArr = configValue && configValue.split('');
 
   configCharsArr.forEach((char, index, arr) => {

@@ -8,7 +8,8 @@ const validateOutput = async () => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
-  const outputFileName = getOptionValue('-o');
+  const outputFileName =
+    getOptionValue('-o') || getOptionValue('--output');
   const filePath = path.join(__dirname, '../..', outputFileName);
 
   try {

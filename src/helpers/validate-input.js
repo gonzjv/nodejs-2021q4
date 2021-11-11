@@ -8,7 +8,8 @@ const validateInput = () => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
-  const inputFileName = getOptionValue('-i');
+  const inputFileName =
+    getOptionValue('-i') || getOptionValue('--input');
   const filePath = path.join(__dirname, '../..', inputFileName);
 
   access(filePath, constants.F_OK, (err) => {

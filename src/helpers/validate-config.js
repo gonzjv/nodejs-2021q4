@@ -3,7 +3,8 @@ import configError from './config-error.js';
 import getOptionValue from './get-options.js';
 
 const validateConfig = () => {
-  const configValue = getOptionValue('-c');
+  const configValue =
+    getOptionValue('-c') || getOptionValue('--config');
 
   checkConfigMissing(configValue);
 

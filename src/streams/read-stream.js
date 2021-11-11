@@ -2,9 +2,10 @@ import fs from 'fs';
 import getOptionValue from '../helpers/get-options.js';
 
 const createReadStream = () => {
-  const inputValue = getOptionValue('-i');
-  if (inputValue) {
-    return fs.createReadStream(inputValue);
+  const inputFileName =
+    getOptionValue('-i') || getOptionValue('--input');
+  if (inputFileName) {
+    return fs.createReadStream(inputFileName);
   } else {
     return process.stdin;
   }
