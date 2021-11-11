@@ -10,6 +10,13 @@ const validateOutput = async () => {
 
   const outputFileName =
     getOptionValue('-o') || getOptionValue('--output');
+
+  if (!outputFileName) {
+    handleFileError(
+      '! FileError. Missing ouput file name after -o (--output) flag',
+    );
+  }
+
   const filePath = path.join(__dirname, '../..', outputFileName);
 
   try {

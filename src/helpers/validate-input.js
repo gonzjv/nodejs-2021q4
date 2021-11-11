@@ -10,6 +10,13 @@ const validateInput = () => {
 
   const inputFileName =
     getOptionValue('-i') || getOptionValue('--input');
+
+  if (!inputFileName) {
+    handleFileError(
+      '! FileError. Missing file name after -i (--input) flag',
+    );
+  }
+
   const filePath = path.join(__dirname, '../..', inputFileName);
 
   access(filePath, constants.F_OK, (err) => {
