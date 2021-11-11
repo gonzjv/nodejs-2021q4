@@ -1,6 +1,6 @@
 import { pipeline } from 'stream';
-import handleError from './src/handle-error.js';
-import validateOptions from './src/validate-options.js';
+import handleError from './src/errorHandlers/handle-error.js';
+import validateOptions from './src/validation/validate-options.js';
 import createReadStream from './src/streams/read-stream.js';
 import createTransformStreams from './src/streams/transform-streams.js';
 import createWriteStream from './src/streams/write-stream.js';

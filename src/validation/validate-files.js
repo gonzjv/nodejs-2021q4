@@ -1,4 +1,4 @@
-import checkFlags from './check-flags.js';
+import checkFlags from '../helpers/check-flags.js';
 import validateInput from './validate-input.js';
 import validateOutput from './validate-output.js';
 

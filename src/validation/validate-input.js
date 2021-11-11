@@ -1,8 +1,9 @@
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import getOptionValue from './get-options.js';
-import handleFileError from './handle-file-error.js';
-import { access, constants } from 'fs';
+import getOptionValue from '../helpers/get-options.js';
+import handleFileError from '../errorHandlers/handle-file-error.js';
+import checkIsFileExist from '../helpers/check-is-file-exist.js';
+import checkIsFileReadable from '../helpers/check-is-file-readable.js';
 
 const validateInput = () => {
   const __filename = fileURLToPath(import.meta.url);
@@ -19,21 +20,9 @@ const validateInput = () => {
 
   const filePath = path.join(__dirname, '../..', inputFileName);
 
-  access(filePath, constants.F_OK, (err) => {
-    if (err) {
-      handleFileError(
-        `Easy, friend. File ${filePath} does not exist`,
-      );
-    }
-  });
+  checkIsFileExist(filePath, 'InputFileError');
 
-  access(filePath, constants.R_OK, (err) => {
-    if (err) {
-      handleFileError(
-        `Wow, wow, wow...easy, friend. File ${filePath} is not readable'}`,
-      );
-    }
-  });
+  checkIsFileReadable(filePath);
 };
 
 export default validateInput;

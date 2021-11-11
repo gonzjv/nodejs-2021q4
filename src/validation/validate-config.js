@@ -1,6 +1,6 @@
-import checkConfigMissing from './check-config-missing.js';
-import configError from './config-error.js';
-import getOptionValue from './get-options.js';
+import checkConfigMissing from '../helpers/check-config-missing.js';
+import configError from '../helpers/config-error.js';
+import getOptionValue from '../helpers/get-options.js';
 
 const validateConfig = () => {
   const configValue =
