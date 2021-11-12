@@ -24,6 +24,14 @@ const validateConfig = () => {
         );
       }
     }
+    if (char.match(/A/)) {
+      const modeValue = arr[index + 1];
+      if (modeValue && modeValue !== '-') {
+        throw new configError(
+          'Atbash cipher should have not any modes',
+        );
+      }
+    }
     if (char.match(/[^ACR0-9-]/)) {
       throw new configError('Available ciphers are: C, A or R');
     }
