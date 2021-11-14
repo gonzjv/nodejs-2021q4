@@ -15,8 +15,6 @@ const atbashEncrypt = (text) => {
         : char.charCodeAt(0),
     );
   const result = String.fromCharCode(...charCodeArr);
-  console.log('before: ', text);
-  console.log('result: ', result);
   return result;
 };
 

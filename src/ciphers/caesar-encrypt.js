@@ -18,8 +18,6 @@ const caesarEncrypt = (text, mode) => {
         : char.charCodeAt(0),
     );
   const res = String.fromCharCode(...charCodeArr);
-  console.log('before: ', text);
-  console.log('result: ', res);
   return res;
 };
 
