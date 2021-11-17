@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "start": "node index.js"
   },
   "repository": {
