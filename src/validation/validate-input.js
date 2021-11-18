@@ -20,7 +20,7 @@ const validateInput = () => {
 
   const filePath = path.join(__dirname, '../..', inputFileName);
 
-  checkIsFileExist(filePath, 'InputFileError');
+  checkIsFileExist(filePath);
 
   checkIsFileReadable(filePath);
 };
