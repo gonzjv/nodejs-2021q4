@@ -3,7 +3,8 @@
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
-    }
+    },
+    "verbose": true
   },
   "description": "",
   "version": "1.0.0",
