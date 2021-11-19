@@ -5,7 +5,7 @@ import handleFileError from '../errorHandlers/handle-file-error.js';
 import checkIsFileExist from '../helpers/check-is-file-exist.js';
 import checkIsFileWritable from '../helpers/check-is-file-writable.js';
 
-const validateOutput = async () => {
+const validateOutput = () => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
@@ -20,7 +20,7 @@ const validateOutput = async () => {
 
   const filePath = path.join(__dirname, '../..', outputFileName);
 
-  checkIsFileExist(filePath, 'OutputFileError');
+  checkIsFileExist(filePath);
 
   checkIsFileWritable(filePath);
 };

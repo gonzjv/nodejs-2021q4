@@ -1,10 +1,9 @@
-import { access, constants } from 'fs';
-import handleFileError from '../errorHandlers/handle-file-error.js';
+import { accessSync, constants } from 'fs';
 import fileError from './file-error.js';
 
 const checkIsFileReadable = (filePath) => {
   try {
-    access(filePath, constants.R_OK);
+    accessSync(filePath, constants.R_OK);
   } catch (error) {
     throw new fileError(
       `Wow, wow, wow...easy, friend. File ${filePath} is not readable`,
