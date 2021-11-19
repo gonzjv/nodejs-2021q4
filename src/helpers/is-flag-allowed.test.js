@@ -1,5 +1,6 @@
 import flagsError from './flags-error.js';
 import isFlagsAllowed from './is-flag-allowed.js';
+import { jest } from '@jest/globals';
 
 const ERROR_MESSAGE =
   'Stop, fellow! You need to enter valid options with flag -c or --config ';

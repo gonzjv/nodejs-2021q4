@@ -1,5 +1,6 @@
 import flagsError from './flags-error.js';
 import isFlagsDuplicate from './is-flag-duplicate.js';
+import { jest } from '@jest/globals';
 
 const ERROR_MESSAGE =
   'Stop, man! You are duplicate some flag. Each flag available to enter only one time. ';
