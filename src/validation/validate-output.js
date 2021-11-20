@@ -1,16 +1,12 @@
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import getOptionValue from '../helpers/get-options.js';
 import handleFileError from '../errorHandlers/handle-file-error.js';
 import checkIsFileExist from '../helpers/check-is-file-exist.js';
 import checkIsFileWritable from '../helpers/check-is-file-writable.js';
 
-const validateOutput = () => {
+const validateOutput = (outputFileName) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-
-  const outputFileName =
-    getOptionValue('-o') || getOptionValue('--output');
 
   if (!outputFileName) {
     handleFileError(
