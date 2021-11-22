@@ -2,46 +2,40 @@
 
 ## Install
 
-1. Create directory for cross-check purpose. For example:
+1. Clone Pandora's box:
 
 ```bash
-$ mkdir nodejs-cross-check
+git clone https://github.com/gonzjv/nodejs-2021q4.git
 ```
 
-2. Go to that directory:
+2. Jump inside:
 
 ```bash
-$ cd nodejs-cross-check
+cd nodejs-2021q4
 ```
 
-3. Clone repository:
+2. Switch to **feature/testing** branch:
 
 ```bash
-$ git clone https://github.com/gonzjv/nodejs-2021q4.git
+git checkout feature/testing
 ```
 
-4. Install dependecies:
+3. Install dependecies:
 
 ```bash
-$ npm install
-```
-
-5. Switch to **feature/testing** branch:
-
-```bash
-$ git checkout feature/testing
+npm install
 ```
 
 ## Usage.
 
-1. For run tests:
+1. Run tests:
 
 ```bash
-$ npm run test
+npm run test
 ```
 
-2. For run tests with coverage:
+2. Run tests with coverage:
 
 ```bash
-$ npm run test-coverage
+npm run test-coverage
 ```
