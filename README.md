@@ -26,15 +26,17 @@ git checkout feature/testing
 npm install
 ```
 
-## Usage.
+## How to test
 
-1. Run tests:
+1. For file access tests you need to close access in properties of file ./no-access-file.txt.
+
+2. Run tests:
 
 ```bash
 npm run test
 ```
 
-2. Run tests with coverage:
+3. Run tests with coverage:
 
 ```bash
 npm run test-coverage
