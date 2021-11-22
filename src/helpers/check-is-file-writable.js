@@ -1,14 +1,14 @@
-import { access, constants } from 'fs';
-import handleFileError from '../errorHandlers/handle-file-error.js';
+import { accessSync, constants } from 'fs';
+import fileError from './file-error.js';
 
 const checkIsFileWritable = (filePath) => {
-  access(filePath, constants.W_OK, (err) => {
-    if (err) {
-      handleFileError(
-        `[OutputFileError] Wow, wow, wow...easy, friend. File ${filePath} is not writable`,
-      );
-    }
-  });
+  try {
+    accessSync(filePath, constants.W_OK);
+  } catch (error) {
+    throw new fileError(
+      `Wow, wow, wow...easy, friend. File ${filePath} is not writable`,
+    );
+  }
 };
 
 export default checkIsFileWritable;

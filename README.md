@@ -1,61 +1,43 @@
-# Ciphering CLI Tool
+# Ciphering CLI Tool. Testing
 
 ## Install
 
-1. Create directory for cross-check purpose. For example:
+1. Clone Pandora's box:
 
 ```bash
- ~/.../$ mkdir nodejs-cross-check
+git clone https://github.com/gonzjv/nodejs-2021q4.git
 ```
 
-2. Go to that directory:
+2. Jump inside:
 
 ```bash
- ~/.../$ cd nodejs-cross-check
+cd nodejs-2021q4
 ```
 
-3. Clone repository:
+2. Switch to **feature/testing** branch:
 
 ```bash
- ~/.../$ git clone https://github.com/gonzjv/nodejs-2021q4.git
+git checkout feature/testing
 ```
 
-4. Switch to ciphering-tool branch:
+3. Install dependecies:
 
 ```bash
- ~/.../$ git checkout ciphering-tool
+npm install
 ```
 
-## Details
+## How to test
 
-CLI tool accept 3 options (short alias and full name):
+1. For file access tests you need to close access in properties of file ./no-access-file.txt.
 
-1.  **-c, --config**: config for ciphers
-    Config is a string with pattern `{XY(-)}n`, where:
-
-- `X` is a cipher mark:
-  - `C` is for Caesar cipher (with shift 1)
-  - `A` is for Atbash cipher
-  - `R` is for ROT-8 cipher
-- `Y` is flag of encoding or decoding (mandatory for Caesar cipher and ROT-8 cipher and should not be passed Atbash cipher)
-  - `1` is for encoding
-  - `0` is for decoding
-
-2.  **-i, --input**: a path to input file
-3.  **-o, --output**: a path to output file
-
-For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by Caesar cipher => decode by ROT-8 => use Atbash"
-
-**Usage example:**
+2. Run tests:
 
 ```bash
-$ node ciphering-tool -c C1-C1-R0-A -i input.txt -o output.txt
+npm run test
 ```
 
-> input.txt
+3. Run tests with coverage:
 
-> `This is secret. Message about "_" symbol!`
-
-> output.txt
-
-> `Myxn xn nbdobm. Tbnnfzb ferlm "_" nhteru!`
+```bash
+npm run test-coverage
+```
